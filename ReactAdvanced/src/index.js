@@ -154,27 +154,27 @@ import ReactDOM from "react-dom/client"
 // root.render(<ToDoListApp />)
 
 //**useContext()
-import ThemeAppp from "./hooks-useState/useContext/themeApp"
-import { ThemeContextProvider } from "./hooks-useState/useContext/themeContext"
-import "./style.css"
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(
-  <ThemeContextProvider>
-    <ThemeAppp />
-  </ThemeContextProvider>
-)
+// import ThemeAppp from "./hooks-useState/useContext/themeApp"
+// import { ThemeContextProvider } from "./hooks-useState/useContext/themeContext"
+// import "./style.css"
+// const root = ReactDOM.createRoot(document.getElementById("root"))
+// root.render(
+//   <ThemeContextProvider>
+//     <ThemeAppp />
+//   </ThemeContextProvider>
+// )
 
 // import App from "./hooks-useState/customHookMenu/memuApp"
 // const root = ReactDOM.createRoot(document.getElementById("root"))
 // root.render(<App />)
 
 //* Router  v5 방식이라서 작동하지 않음.  v6 로 고쳐야함.
-// import { BrowserRouter } from "react-router-dom"
-// import App from "./reactRouter/ProductApp"
+import { BrowserRouter as Router } from "react-router-dom"
+import App from "./reactRouter/ProductApp"
 
-// const root = ReactDOM.createRoot(document.getElementById("root"))
-// root.render(
-//   <Router>
-//     <App />
-//   </Router>
-// )
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
+  <Router>
+    <App />
+  </Router>
+)
