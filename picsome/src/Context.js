@@ -14,20 +14,24 @@ function ContextProvider({ children }) {
       .then(data => setAllPhotos(data))
   }, [])
 
+  // console.log(allPhotos)
+
   function toggleFavorite(id) {
     const updatedArr = allPhotos.map(photo => {
       if (photo.id === id) {
+        //console.log(id)
+        //console.log(!photo.isFavorite)
         return { ...photo, isFavorite: !photo.isFavorite }
       }
       return photo
     })
-
     setAllPhotos(updatedArr)
   }
 
   function addToCart(newItem) {
     setCartItems(prevItems => [...prevItems, newItem])
   }
+  //console.log(cartItems)
 
   function removeFromCart(id) {
     setCartItems(prevItems => prevItems.filter(item => item.id !== id))
@@ -37,16 +41,16 @@ function ContextProvider({ children }) {
     setCartItems([])
   }
 
+  // prettier-ignore
   return (
-    <Context.Provider
-      value={{
-        allPhotos,
-        toggleFavorite,
-        cartItems,
-        addToCart,
-        removeFromCart,
-        emptyCart
-      }}>
+    <Context.Provider value={{
+      allPhotos, 
+      toggleFavorite, 
+      cartItems, 
+      addToCart, 
+      removeFromCart, 
+      emptyCart
+    }}>
       {children}
     </Context.Provider>
   )
