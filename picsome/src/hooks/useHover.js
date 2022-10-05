@@ -11,7 +11,6 @@ function useHover() {
   function leave() {
     setHovered(false)
   }
-
   /**
    * Challenge:
    *
@@ -23,10 +22,12 @@ function useHover() {
    */
 
   useEffect(() => {
-    ref.current.addEventListener("mouseenter", enter)
-    ref.current.addEventListener("mouseleave", leave)
-
+    if (ref.current) {
+      ref.current.addEventListener("mouseenter", enter)
+      ref.current.addEventListener("mouseleave", leave)
+    }
     return () => {
+      // 오류 Cannot read properties of null (reading 'removeEventListener')
       ref.current.removeEventListener("mouseenter", enter)
       ref.current.removeEventListener("mouseleave", leave)
     }
