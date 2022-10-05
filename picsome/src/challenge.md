@@ -152,7 +152,7 @@ Clicking the "Place Order" button should:
 3. Log "Order placed!" to the console
 4. Empty out the cart
 
-# Challenge
+# Challenge 16
 
 1. Only render the "Place Order" button if there are items in the cart
 
